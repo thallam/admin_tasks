@@ -15,7 +15,6 @@ ActiveAdmin.register Task do
 #   # end
 
   actions :all
-  permit_params :description, :time_interval
-
+  permit_params :description, :time_estimate, :priority
 
 end

@@ -12,5 +12,15 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  task = Task.new(description: "test task")
+  it "is valid with a description" do
+    expect(task).to be_valid
+  end
+  it "is invalid without a description" do
+    task = Task.new( time_estimate: 45)
+    task.valid?
+    expect(task.errors[:description]).to include("can't be blank")
+  end
+
+
 end

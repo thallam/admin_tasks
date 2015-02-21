@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220171616) do
+ActiveRecord::Schema.define(version: 20150221074105) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(version: 20150220171616) do
   create_table "tasks", force: :cascade do |t|
     t.string   "description"
     t.integer  "time_estimate"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "priority",      default: 0
   end
 
 end

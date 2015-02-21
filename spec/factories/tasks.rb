@@ -12,7 +12,7 @@
 FactoryGirl.define do
   factory :task do
     description "MyString"
-time_estimate 1
+    time_estimate 1
   end
 
 end
