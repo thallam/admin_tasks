@@ -7,6 +7,11 @@
 #  time_estimate :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  priority      :integer          default("0")
+#  due           :date
+#  project_id    :integer
+#  admin_user_id :integer
+#  completed     :boolean
 #
 
 FactoryGirl.define do

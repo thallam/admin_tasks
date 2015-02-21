@@ -15,6 +15,14 @@ ActiveAdmin.register Task do
 #   # end
 
   actions :all
-  permit_params :description, :time_estimate, :priority
+  permit_params :description,:due, :time_estimate, :priority, :project_id, :admin_user_id
+
+  scope :all, default: true
+  scope :due_this_week do |tasks|
+    tasks.where('due > ? and due < ?', Time.now, 1.week.from_now)
+  end
+  scope :late do |tasks|
+    tasks.where('due < ?', Time.now)
+  end
 
 end
