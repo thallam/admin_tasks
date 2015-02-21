@@ -12,6 +12,7 @@
 #  project_id    :integer
 #  admin_user_id :integer
 #  completed     :boolean
+#  context       :integer          default("0")
 #
 
 FactoryGirl.define do

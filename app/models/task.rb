@@ -12,10 +12,13 @@
 #  project_id    :integer
 #  admin_user_id :integer
 #  completed     :boolean
+#  context       :integer          default("0")
 #
 
 class Task < ActiveRecord::Base
 validates :description, :project, :admin_user, presence: true
 belongs_to :project
 belongs_to :admin_user
+
+enum context: [:computer, :programming, :email, :calls, :errands, :misc]
 end
