@@ -1,0 +1,16 @@
+permit_params :description,:completed, :due, :context, :time_estimate, :priority, :project_id, :admin_user_id
+
+active_admin_form_for Task.first do |f|
+    f.semantic_errors
+    # f.inputs "Details" do
+      f.input :project_id, label: "Project"
+      f.input :description
+      f.input :priority
+      f.input :context, as: :select, collection: Task.contexts.keys
+      f.input :completed
+      f.input :time_estimate
+      f.input :due, as: :datepicker, datepicker_options: { min_date: 0.days.ago.to_date, max_date: "+1M +5D" }
+    # end
+    actions
+  end
+

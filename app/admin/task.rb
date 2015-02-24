@@ -20,6 +20,7 @@ actions :all
 permit_params :description,:completed, :due, :context, :time_estimate, :priority, :project_id, :admin_user_id
 
 index do
+  selectable_column
   column :description
   column :priority
   column :context
@@ -43,6 +44,9 @@ form do |f|
   end
   actions
 end
+
+
+sidebar :Selected, partial: 'sideform', collection: Task.first
 
 filter :description
 filter :priority
